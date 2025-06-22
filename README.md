@@ -1,51 +1,54 @@
-# templates/spa
+# ISO9000 Viewer
 
-This template leverages [Remix SPA Mode](https://remix.run/docs/en/main/guides/spa-mode) to build your app as a Single-Page Application using [Client Data](https://remix.run/docs/en/main/guides/client-data) for all of your data loads and mutations.
+## プロジェクト説明
 
-## Setup
+ISO9000 (JISQ9000) 品質マネジメントシステム規格を Web 上で読みやすく表示するサイト。GitHub Pages で構築し、規格文書を構造化して閲覧・検索できます。個人的な学習・参照用。
+
+## サイト URL
+
+https://koumatsumoto.github.io/iso9000-viewer/
+
+## セットアップ
+
+### 前提条件
+
+- Node.js (推奨: v18 以上)
+- npm
+
+### インストール
 
 ```shellscript
-npx create-remix@latest --template remix-run/remix/templates/spa
+npm install
 ```
 
-## Development
-
-You can develop your SPA app just like you would a normal Remix app, via:
+### 開発サーバーの起動
 
 ```shellscript
 npm run dev
 ```
 
-## Production
-
-When you are ready to build a production version of your app, `npm run build` will generate your assets and an `index.html` for the SPA.
+## プロダクションビルド
 
 ```shellscript
 npm run build
 ```
 
-### Preview
-
-You can preview the build locally with [vite preview](https://vitejs.dev/guide/cli#vite-preview) to serve all routes via the single `index.html` file:
+### ローカルでプレビュー
 
 ```shellscript
 npm run preview
 ```
 
-> [!IMPORTANT]
->
-> `vite preview` is not designed for use as a production server
+## CI/CD
 
-### Deployment
+このプロジェクトは GitHub Actions を使用して GitHub Pages に自動デプロイされます。
 
-You can then serve your app from any HTTP server of your choosing. The server should be configured to serve multiple paths from a single root `/index.html` file (commonly called "SPA fallback"). Other steps may be required if the server doesn't directly support this functionality.
+- `main` ブランチへのプッシュで自動的にビルド・デプロイが実行されます
+- GitHub Pages の設定でソースを「GitHub Actions」に設定してください
 
-For a simple example, you could use [sirv-cli](https://www.npmjs.com/package/sirv-cli):
+## 技術スタック
 
-```shellscript
-npx sirv-cli build/client/ --single
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+- [Remix](https://remix.run/) (SPA Mode)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- TypeScript
