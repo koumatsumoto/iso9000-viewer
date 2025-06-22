@@ -136,7 +136,7 @@ export default function Index() {
                 {/* Notes */}
                 {selectedTerm.notes && selectedTerm.notes.length > 0 && (
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">備考</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">注記</h3>
                     <ul className="space-y-2">
                       {selectedTerm.notes.map((note, index) => (
                         <li key={index} className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -166,7 +166,7 @@ export default function Index() {
                 {/* Remark */}
                 {selectedTerm.remark && (
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">注記</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">備考</h3>
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed italic">{selectedTerm.remark}</p>
                   </div>
                 )}
