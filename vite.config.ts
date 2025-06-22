@@ -8,10 +8,15 @@ declare module "@remix-run/node" {
   }
 }
 
+const isGitHubPages = process.env.NODE_ENV === "production" && process.env.GITHUB_PAGES === "true";
+const basePath = isGitHubPages ? "/iso9000-viewer/" : "/";
+
 export default defineConfig({
+  base: basePath,
   plugins: [
     remix({
       ssr: false,
+      basename: basePath,
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
